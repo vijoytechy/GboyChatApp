@@ -81,7 +81,7 @@
     </header>
     <ul id="messages"></ul>
     <form action="/" method="POST" id="chatForm">
-        <input id="txt" autocomplete="off" autofocus="on" oninput="isTyping()"
+        <input id="txt" autocomplete="off" autofocus="on"
             placeholder="type your message here..." /><button>Send</button>
     </form>
     <footer class="Gfoot">
@@ -96,6 +96,7 @@
             $('#txt').val('');
             return false;
         });
+
         // append the chat text message
         socket.on('chat_message', function (msg) {
             $('#messages').append($('<li>').html(msg));
