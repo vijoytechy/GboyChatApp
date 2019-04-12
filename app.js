@@ -2,7 +2,10 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-
+const path = require('path');
+// Set 'views' directory for any views 
+// being rendered res.render()
+app.set('views', path.join(__dirname, 'views'));
 app.get('/', function (req, res) {
     res.render('index.ejs');
 });
